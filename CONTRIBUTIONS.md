@@ -7,13 +7,13 @@ reconstructing it the night before is how groups lose marks here.
 
 | Name | Workstream | Main deliverables | Approx. hours |
 |---|---|---|---|
-| Trong Le | C — homophily and departments | | |
 | Trung Le | A — data and pipeline | | |
 | Ryan Allen Madayag | B — network structure | | |
-| Jack Nguyen | F — interventions and results | | |
+| Trong Le | C — homophily and departments | | |
 | Sean Roser | D — centrality and super-spreaders | | |
-| Matthew Saldivar | G — literature and report assembly | | |
 | Zhihan Yao | E — SIR/SIS simulation | | |
+| Jack Nguyen | F — interventions and results | | |
+| Matthew Saldivar | G — literature and report assembly | | |
 
 ## Log
 

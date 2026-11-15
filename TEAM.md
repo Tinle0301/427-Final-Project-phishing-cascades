@@ -5,13 +5,13 @@ a subsection of the report, and a slide.
 
 | Name | Workstream | GitHub | Slide |
 |---|---|---|---|
-| Trong Le | C — homophily and departments | | 4 |
 | Trung Le | A — data and pipeline | | 2 |
 | Ryan Allen Madayag | B — network structure | | 3 |
-| Jack Nguyen | F — interventions and results | | 7 |
+| Trong Le | C — homophily and departments | | 4 |
 | Sean Roser | D — centrality and super-spreaders | | 6 |
-| Matthew Saldivar | G — literature and report assembly | | 8 |
 | Zhihan Yao | E — SIR/SIS simulation | | 5 |
+| Jack Nguyen | F — interventions and results | | 7 |
+| Matthew Saldivar | G — literature and report assembly | | 8 |
 
 Group leader (submits report, slides and contribution doc): **TBD**
 
