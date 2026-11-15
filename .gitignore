@@ -1,0 +1,19 @@
+# raw data - download it, do not commit it
+data/raw/
+*.txt.gz
+
+# built graph (regenerate with src/build_graph.py)
+data/email-eu-core.gml
+data/summary.txt
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# os / editors
+.DS_Store
+.vscode/
+.idea/
