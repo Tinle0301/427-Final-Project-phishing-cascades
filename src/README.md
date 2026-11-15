@@ -5,11 +5,12 @@ its figures into `analysis/figures/` and any numbers into `analysis/`.
 
 | File | Workstream | Owner |
 |---|---|---|
-| `build_graph.py` | A — builds the GML everyone else loads | Trung |
-| `structure.py` | B — degrees, components, path length, homophily | Ryan |
-| `centrality.py` | C — degree, betweenness, PageRank, rank correlation | Sean |
-| `simulate_sir.py` | D — the SIR model and beta sweep | Zhihan |
-| `immunize.py` | E — targeted vs random immunization | open |
+| `build_graph.py` | A — builds the GML everyone else loads | Trung Le |
+| `structure.py` | B — degrees, components, path length, clustering | Ryan Allen Madayag |
+| `homophily.py` | C — within vs across department edges | Trong Le |
+| `centrality.py` | D — degree, betweenness, PageRank, rank correlation | Sean Roser |
+| `simulate_sir.py` | E — the SIR model and beta sweep | Zhihan Yao |
+| `immunize.py` | F — targeted vs random immunization | Jack Nguyen |
 
 ## Conventions
 

@@ -70,16 +70,19 @@ CONTRIBUTIONS.md the per-member contribution document we have to submit
 
 ## Team
 
-| Name | Workstream | GitHub |
-|---|---|---|
-| Trung Le | A — data and pipeline | |
-| Ryan Allen Madayag | B — structure and homophily | |
-| Sean Roser | C — centrality and super-spreaders | |
-| Zhihan Yao | D — SIR/SIS simulation | |
-| *(open)* | E — interventions and results | |
-| Matthew Saldivar | F — literature and report | |
+Seven members, seven workstreams — see `TEAM.md` for the table and `PLAN.md`
+for what each one covers.
 
-Presentation is shared — see PLAN.md.
+| Name | Workstream |
+|---|---|
+| Trong Le | C — homophily and departments |
+| Trung Le | A — data and pipeline |
+| Ryan Allen Madayag | B — network structure |
+| Jack Nguyen | F — interventions and results |
+| Sean Roser | D — centrality and super-spreaders |
+| Matthew Saldivar | G — literature and report assembly |
+| Zhihan Yao | E — SIR/SIS simulation |
+
 
 ## Ground rules
 

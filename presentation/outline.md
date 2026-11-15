@@ -4,15 +4,15 @@ Target 10–12 minutes. One idea per slide, figures over text.
 
 | # | Slide | Carries | Owner |
 |---|---|---|---|
-| 1 | Motivation | Why phishing, why a network view | D |
-| 2 | Problem and data | The question + the dataset in one line | A |
-| 3 | The network | Degree distribution, homophily figure | B |
-| 4 | The model | SIR on a directed email graph, parameters | D |
-| 5 | Who spreads it | Centrality comparison, top spreaders | C |
-| 6 | The intervention | Targeted vs random, explained | E |
-| 7 | **Results** | The headline figure — this is the slide | E |
-| 8 | Limitations | Honest about what we simulated | F |
-| 9 | Conclusion | One sentence anyone can repeat | F |
+| 1 | Motivation | Why phishing, why a network view | shared — Zhihan opens |
+| 2 | Problem and data | The question + the dataset in one line | Trung Le |
+| 3 | The network | Degree distribution, small-world | Ryan Allen Madayag |
+| 4 | Homophily | Spread inside vs across departments | Trong Le |
+| 5 | The model | SIR on a directed email graph, parameters | Zhihan Yao |
+| 6 | Who spreads it | Centrality comparison, top spreaders | Sean Roser |
+| 7 | **Results** | The headline figure — this is the slide | Jack Nguyen |
+| 8 | Limitations | Honest about what we simulated | Matthew Saldivar |
+| 9 | Conclusion | One sentence anyone can repeat | shared |
 
 ## Rules
 

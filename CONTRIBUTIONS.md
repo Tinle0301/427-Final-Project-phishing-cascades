@@ -7,12 +7,13 @@ reconstructing it the night before is how groups lose marks here.
 
 | Name | Workstream | Main deliverables | Approx. hours |
 |---|---|---|---|
+| Trong Le | C — homophily and departments | | |
 | Trung Le | A — data and pipeline | | |
-| Ryan Allen Madayag | B — structure and homophily | | |
-| Sean Roser | C — centrality and super-spreaders | | |
-| Zhihan Yao | D — SIR/SIS simulation | | |
-| *(open)* | E — interventions and results | | |
-| Matthew Saldivar | F — literature and report | | |
+| Ryan Allen Madayag | B — network structure | | |
+| Jack Nguyen | F — interventions and results | | |
+| Sean Roser | D — centrality and super-spreaders | | |
+| Matthew Saldivar | G — literature and report assembly | | |
+| Zhihan Yao | E — SIR/SIS simulation | | |
 
 ## Log
 
@@ -24,5 +25,6 @@ Add a line whenever you finish something. Date, name, what you did, where it liv
 
 ## Statement
 
-All members contributed meaningfully to the project. Specific contributions are
-listed above and are traceable through the commit history of this repository.
+All seven members contributed meaningfully to the project. Specific
+contributions are listed above and are traceable through the commit history of
+this repository.
