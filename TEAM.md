@@ -6,20 +6,20 @@ two subsections of the report, and a slide.
 | Name | Workstream | GitHub | Slide |
 |---|---|---|---|
 | Trung Le | A — data and pipeline | Tinle0301 | 2 |
-| Ryan Allen Madayag | B — network structure | | 3 |
-| Trong Le | C — homophily and departments | | 4 |
-| Sean Roser | D — centrality and super-spreaders | | 6 |
-| Zhihan Yao | E — SIR/SIS simulation | | 5 |
-| Jack Nguyen | F — interventions and results | | 7 |
-| Matthew Saldivar | G — literature and report assembly | | 8 |
+| Ryan Allen Madayag | B — network structure | Rylen-CS | 3 |
+| Trong Le | C — homophily and departments | JayLe1010 | 4 |
+| Sean Roser | D — centrality and super-spreaders | SeanRoser | 6 |
+| Zhihan Yao | E — SIR/SIS simulation | Zhihanyao121 | 5 |
+| Jack Nguyen | F — interventions and results | nmnguyn02 | 7 |
+| Matthew Saldivar | G — literature and report assembly | Matsal214 | 8 |
 
 **Group leader: Trung Le** — submits the report, slides and contribution
 document, and chases anything that is late.
 
 Slides 1 and 9 are shared — see `presentation/outline.md`.
 
-**Add your GitHub username to your row and send it to Trung** so he can add you
-as a collaborator. You cannot push until he does.
+All six have been invited as collaborators. If you have not accepted, check your
+GitHub notifications or your email — you cannot push until you do.
 
 ## Where everything lives
 
