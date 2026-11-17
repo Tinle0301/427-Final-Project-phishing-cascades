@@ -1,30 +1,20 @@
 # Contribution Document
 
-The group leader submits this with the report. **Fill in your row as you go** —
-reconstructing it the night before is how groups lose marks here.
+**The contribution table lives at the end of the shared Google Doc**, because
+that is what gets submitted with the report.
 
-## Summary
+https://docs.google.com/document/d/15RZsyliuhNZb4LzXrcKMs8_qQ0cAWoex/edit?usp=sharing
 
-| Name | Workstream | Main deliverables | Approx. hours |
-|---|---|---|---|
-| Trung Le | A — data and pipeline | | |
-| Ryan Allen Madayag | B — network structure | | |
-| Trong Le | C — homophily and departments | | |
-| Sean Roser | D — centrality and super-spreaders | | |
-| Zhihan Yao | E — SIR/SIS simulation | | |
-| Jack Nguyen | F — interventions and results | | |
-| Matthew Saldivar | G — literature and report assembly | | |
+Fill in your own row **as you go**, not the night before. It is graded, and a
+row reconstructed from memory reads like one.
 
-## Log
+Be specific. "Helped with the code" is worth nothing. This is what a row should
+look like:
 
-Add a line whenever you finish something. Date, name, what you did, where it lives.
+> Wrote `src/centrality.py`; computed in-degree, out-degree, exact betweenness
+> and PageRank for all nodes; produced the top-20 rankings in
+> `analysis/top_spreaders.csv`, the pairwise Spearman correlations and
+> `figures/centrality_overlap.png`; drafted Sections 3.4 and 4.4; built slide 6.
 
-```
-2026-11-__  Name  what you did                          file or PR
-```
-
-## Statement
-
-All seven members contributed meaningfully to the project. Specific
-contributions are listed above and are traceable through the commit history of
-this repository.
+Your commits are the evidence behind your row, so commit as you work rather
+than in one lump at the end.
