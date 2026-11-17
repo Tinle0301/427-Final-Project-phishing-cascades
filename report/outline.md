@@ -1,39 +1,52 @@
-# Report outline — 4 pages
+# Report
 
-Hard limit. Anything that does not earn its space comes out.
+**The report is written in the shared Google Doc, not in this folder.**
 
-## Abstract (~150 words)
-What we did, on what data, what we found, what we recommend. Written last.
+https://docs.google.com/document/d/15RZsyliuhNZb4LzXrcKMs8_qQ0cAWoex/edit?usp=sharing
 
-## 1. Introduction (~0.6 page)
-- Phishing is the entry point for most breaches; one click compromises an org
-- Security training is expensive, so it cannot go to everyone equally
-- **Problem statement:** given an organisation's email network, where does
-  limited security effort do the most good?
+Write under your own heading there. Do not draft report prose in this repo —
+two copies drift apart and someone ends up editing the dead one.
 
-## 2. Notation / Model (~1.2 pages)
-- The graph: G = (V, E), directed, |V| = 1,005, |E| = 25,571, node attribute `department`
-- Why directed matters: phishing travels the way mail travels
-- Centrality definitions: degree, betweenness, PageRank
-- The SIR model: states S/I/R, infection probability beta per contact, recovery
-  after tau steps, discrete time
-- Structural facts that shape the spread: path length, clustering, homophily
+This file exists only to record who owns which section and when it is due.
 
-## 3. Proposed Solution (~1.4 pages)
-- Target training by network position, not at random
-- Compare four strategies for choosing the k users to train
-- Results: final outbreak size vs k, for each strategy
-- The headline number: *targeted training on k = __ users cuts the outbreak by __%
-  compared with training __ at random*
-- Why it works, in terms of the structure from section 2
-- Ethics and feasibility: this uses metadata, not message content; who gets
-  flagged and what that means for them
+## Section map
 
-## 4. Conclusion and Future Work (~0.6 page)
-- What we showed
-- Limits: simulated outbreak, no message content, one organisation, static graph
-- Future: use the temporal version for a real time-ordered cascade; model
-  heterogeneous susceptibility instead of one beta for everyone
+Each person writes the **method** in Section 3 and the **result** in Section 4.
+That split follows the sample paper the professor co-authored.
 
-## Sources
-Every claim that is not ours gets a citation.
+| Section | Owner | Words | Due |
+|---|---|---|---|
+| Abstract | Matthew Saldivar | ~120 | Wed Nov 25 |
+| 1. Introduction | Matthew Saldivar | ~350 | Wed Nov 25 |
+| 2. Related Work | Matthew Saldivar | ~400 | Sat Nov 21 |
+| 3.1 Dataset | Trung Le | ~150 | Sat Nov 21 |
+| 3.2 Graph construction and network structure | Ryan Allen Madayag | ~180 | Sat Nov 21 |
+| 3.3 Homophily by department | Trong Le | ~180 | Sat Nov 21 |
+| 3.4 Centrality metrics | Sean Roser | ~200 | Sat Nov 21 |
+| 3.5 The SIR epidemic model | Zhihan Yao | ~200 | Sat Nov 21 |
+| 3.6 Immunization strategies | Jack Nguyen | ~180 | Wed Nov 25 |
+| 4.1 Limitations and caveats | Matthew Saldivar | ~150 | Wed Nov 25 |
+| 4.2 Network structure | Ryan Allen Madayag | ~200 | Sat Nov 21 |
+| 4.3 Homophily and departmental structure | Trong Le | ~200 | Sat Nov 21 |
+| 4.4 Identifying super-spreaders | Sean Roser | ~300 | Sat Nov 21 |
+| 4.5 Outbreak dynamics | Zhihan Yao | ~250 | Sat Nov 21 |
+| 4.6 Targeted immunization | Jack Nguyen | ~450 | Wed Nov 25 |
+| 5. Discussion | Jack Nguyen + Matthew Saldivar | ~300 | Wed Nov 25 |
+| 6. Conclusion and future work | Matthew Saldivar | ~350 | Wed Nov 25 |
+| 7. References | everyone adds their own | — | Wed Nov 25 |
+
+## Figures
+
+Figures stay in `analysis/figures/` and are produced by a script in `src/`.
+Do not paste images into the Doc as you go — Matthew places them during
+assembly, so that what is in the report always matches what the code produces.
+
+Name the figure in your subsection so Matthew knows where it goes.
+
+## Open questions for the professor
+
+- **Page limit.** The assignment sheet says 4 pages. The sample paper runs 19.
+  The word targets above follow the 4-page sheet; if the real target is longer,
+  they all scale up.
+- **Authorship.** Should Prof. Morales Ponce be listed as an author, as he is
+  on the sample paper?
