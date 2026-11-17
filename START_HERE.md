@@ -25,9 +25,13 @@ in the report.
 git clone https://github.com/Tinle0301/phishing-cascades.git
 cd phishing-cascades
 pip install -r requirements.txt
-bash data/download.sh
+bash data/download.sh          # Windows: python src\download_data.py
 python3 src/build_graph.py
 ```
+
+**On Windows**, `bash data/download.sh` fails with `cd: $'data\r'` errors —
+that is a line-ending problem, not your setup. Run `python src\download_data.py`
+instead; it does the same thing and needs no bash.
 
 If the last command prints a table of counts and writes
 `data/email-eu-core.gml`, you are ready. If it fails, post in the chat **that
