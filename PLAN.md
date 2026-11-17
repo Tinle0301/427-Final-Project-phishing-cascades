@@ -1,130 +1,144 @@
 # Work Plan
 
-Four weeks, seven workstreams of roughly equal size. Everyone owns one, and
-everyone writes the part of the report that comes out of their own work — that
-is what keeps the contribution document honest and the marks even.
+**DUE: Tuesday Dec 1, 2026 at 23:59.**
 
-**Adjust the dates** once we confirm the exact presentation date.
+**All seven workstreams finish Wednesday Nov 25 — the day before Thanksgiving.**
+Everything after that is buffer, polish, and rehearsal. Nobody works over the
+holiday, and if something slips we still have five days to fix it.
+
+Seven workstreams of roughly equal size. Everyone owns one, and everyone writes
+the part of the report that comes out of their own work.
 
 ## Timeline
 
-| Week | Dates | What happens |
-|---|---|---|
-| 1 | Nov 16 – Nov 22 | Setup. Data downloaded, graph built, everyone can run the repo. Workstreams claimed. |
-| 2 | Nov 23 – Nov 29 | Each person does their analysis. Thanksgiving Nov 26 — short week, plan around it. |
-| 3 | Nov 30 – Dec 6 | Integrate. All figures final. Full report draft. Slides drafted. |
-| 4 | Dec 7 – Dec 13 | Polish, rehearse, submit. |
+| Dates | What happens |
+|---|---|
+| **Mon Nov 16 – Tue Nov 17** | Setup. Everyone clones, installs, builds the graph. |
+| **Wed Nov 18 – Sat Nov 21** | Analyses B, C, D, E. Four days, all in parallel. |
+| **Sun Nov 22 – Wed Nov 25** | F (immunization). G assembles the report and slides. |
+| **Wed Nov 25, 23:59** | **EVERYTHING DONE.** All figures, all report text, all slides. |
+| **Thu Nov 26 – Fri Nov 27** | Thanksgiving. Nothing scheduled. |
+| **Sat Nov 28 – Sun Nov 29** | Buffer. Only used if something slipped. |
+| **Mon Nov 30** | Rehearse. Final read-through. |
+| **Tue Dec 1** | Final check. **Submit before 23:59.** |
 
 ### Hard checkpoints
 
-| When | What must exist |
-|---|---|
-| **Wed Nov 18** | `data/email-eu-core.gml` builds for everyone. Anyone blocked says so now, not in December. |
-| **Sun Nov 29** | Every workstream has its figure and a one-paragraph finding. |
-| **Sun Dec 6** | Report draft complete at 4 pages. Slides at 9. |
-| **Wed Dec 9** | Full rehearsal, timed. |
-| **Presentation day** | Report, slides and contribution doc submitted by the group leader. |
+| When | What must be true | Who is blocked if it slips |
+|---|---|---|
+| **Tue Nov 17, EOD** | Repo runs for all seven of us | everyone |
+| **Sat Nov 21, EOD** | B, C, D, E figures done and pushed | **Jack cannot start** without D and E |
+| **Wed Nov 25, 23:59** | All six figures + all report subsections + 9 slides | — |
+| **Mon Nov 30** | Rehearsal done | — |
+| **Tue Dec 1, 23:59** | Report + slides + contribution doc submitted | — |
+
+**Sat Nov 21 is the one date that matters.** Jack has four days after it, and
+nothing after Nov 25 depends on anyone but the group as a whole.
 
 ## Workstreams
 
 Each one is: **a script** in `src/`, **one figure or table** in `analysis/`,
 **one subsection** of the report, **one slide**.
 
-### A — Data and pipeline · *Trung Le*
-Download, clean, convert SNAP format to GML with department labels attached.
-Maintain the shared loader everyone imports. Produce the basic counts table.
+### A — Data and pipeline · *Trung Le* · due Tue Nov 17
+Own `src/build_graph.py`. Verify our counts against the SNAP page (its own two
+pages disagree, so our numbers come from the file). Produce the counts table for
+the Notation section.
+**Deliver:** `data/summary.txt` + the dataset paragraph.
 
-**Done when:** `python3 src/build_graph.py` works on a clean clone and
-`data/summary.txt` holds the numbers we quote in the Notation section.
+### B — Network structure · *Ryan Allen Madayag* · due Sat Nov 21
+In/out-degree distributions log-log. SCC and WCC counts and largest. Average
+shortest path length on the largest SCC, average clustering. Compare both
+against `nx.gnm_random_graph` of the same size — that comparison is what
+justifies the small-world claim.
+**Deliver:** `analysis/figures/degree_distribution.png` + one sentence with the
+numbers.
 
-### B — Network structure · *Ryan Allen Madayag*
-In- and out-degree distributions. Strongly and weakly connected components.
-Average shortest path length and clustering coefficient — is it small-world?
-Density and reciprocity.
+### C — Homophily and departments · *Trong Le* · due Sat Nov 21
+What fraction of edges stay inside a department? What would chance predict —
+computed analytically and by shuffling labels 1,000 times? Which departments are
+insular, which bridge? Report
+`nx.attribute_assortativity_coefficient(G, "department")`.
+**Deliver:** `analysis/figures/homophily.png` + a short table.
 
-**Done when:** a degree-distribution plot and a small-world claim backed by
-numbers, in `analysis/figures/degree_distribution.png`.
+### D — Centrality and super-spreaders · *Sean Roser* · due Sat Nov 21
+In-degree, out-degree, betweenness, PageRank for all 1,005 nodes. Top 20 by
+each. Spearman correlation between the measures. Exact betweenness runs in
+seconds at this size.
+**Deliver:** `analysis/top_spreaders.csv` + `figures/centrality_overlap.png`.
+**Jack is blocked until you push.**
 
-### C — Homophily and departments · *Trong Le*
-With 42 department labels: what fraction of edges stay inside a department
-versus what chance would predict? Which departments are insular, which are
-bridges? This is the homophily topic from the course, applied directly.
+### E — SIR / SIS simulation · *Zhihan Yao* · due Sat Nov 21
+Discrete-time SIR on the directed graph. One seed, infection probability beta
+per contact, recovery after tau steps. Sweep beta ~0.01 to 0.2, average 100+
+runs. Find the epidemic threshold.
+**Deliver:** `analysis/figures/sir_curves.png` + the threshold value.
+**Write it as an importable function — Jack reuses it.**
 
-**Done when:** a figure comparing observed vs expected cross-department edges,
-plus a short table of the most and least insular departments.
+### F — Interventions and results · *Jack Nguyen* · due Wed Nov 25
+Immunise k users before the outbreak — by degree, betweenness, PageRank, and at
+random. Sweep k from 0 to ~100, measure final outbreak size, average over runs.
+**Deliver:** `analysis/figures/immunization.png` — our headline figure — plus
+the number: "targeting k users by X cuts the outbreak Y% versus random."
+**You start Sun Nov 22.** Before then, help test D and E so they land on time.
 
-### D — Centrality and super-spreaders · *Sean Roser*
-Degree, betweenness and PageRank for every node. Do the three agree on who is
-dangerous? Rank-correlate them. Produce the top 20 by each measure.
+### G — Literature and report assembly · *Matthew Saldivar* · due Wed Nov 25
+At least 8 papers with one-line takeaways. Write Abstract, Introduction,
+Conclusion. Assemble everyone's subsections into 4 pages and enforce the limit,
+and build the 9 slides.
+**Deliver:** `literature/notes.md` + a 4-page document in `report/` + the deck.
+**Start the literature review now** — it does not depend on anyone's code, so
+it is the one task you can finish early and then spend the rest of your time
+assembling.
 
-**Done when:** `analysis/top_spreaders.csv` and a figure showing how much the
-three rankings overlap.
-
-### E — SIR / SIS simulation · *Zhihan Yao*
-Implement SIR on the directed graph. One infected seed, infection probability
-beta per contact, recovery after tau steps. Sweep beta. Average over many runs
-so the curves are stable.
-
-**Done when:** infected-over-time curves across a range of beta, and a stated
-epidemic threshold — the beta below which the outbreak dies out.
-
-### F — Interventions and results · *Jack Nguyen*
-The payoff. Immunise k users before the outbreak — by degree, by betweenness,
-by PageRank, and at random — then measure the final outbreak size. Sweep k from
-0 to about 100. Uses D's rankings and E's simulation, so coordinate with both.
-
-**Done when:** one figure, final outbreak size vs k, four curves. This is our
-headline result and the slide people will remember.
-
-### G — Literature and report assembly · *Matthew Saldivar*
-Find and summarise the papers the solution is grounded in: network epidemiology,
-targeted immunization, phishing susceptibility. Write Abstract, Introduction and
-Conclusion. Assemble everyone's subsections into 4 pages and enforce the limit.
-
-**Done when:** `literature/notes.md` holds at least 8 papers with one-line
-takeaways, and `report/` holds a 4-page document.
-
-## Dependencies — who is waiting on whom
+## Who is waiting on whom
 
 ```
-A (data)  ──►  B, C, D, E          everyone needs the .gml first
-D + E     ──►  F                   F needs rankings and a working simulation
-all       ──►  G                   G assembles last
+A (Nov 17)  ──►  B, C, D, E (Nov 21)
+D + E       ──►  F (Nov 25)
+everyone    ──►  G (Nov 25)
 ```
 
-So **A finishes first** (week 1), **F starts once D and E have something
-runnable** (midway through week 2), and **G is writing throughout** rather than
-only at the end.
-
-## Report sections and who drafts them
+## Report sections
 
 | Section | Pages | Drafted by |
 |---|---|---|
 | Abstract | 0.2 | G |
-| Introduction — motivation, problem statement | 0.6 | G, with E |
-| Notation / Model — graph definition, SIR equations, parameters | 1.2 | A + B + C + E |
-| Proposed Solution — centrality targeting, immunization results | 1.4 | D + F |
+| Introduction | 0.6 | G, with E |
+| Notation / Model | 1.2 | A + B + C + E |
+| Proposed Solution | 1.4 | D + F |
 | Conclusion and Future Work | 0.6 | G |
+
+Everyone's subsection is in the repo by **Wed Nov 25**, not handed to Matthew at
+the end.
 
 ## Slides — nine, one owner each
 
 | # | Slide | Owner |
 |---|---|---|
-| 1 | Motivation — phishing costs, why networks matter | shared, presented by E |
-| 2 | Problem statement and dataset | A — Trung |
-| 3 | The network — structure and small-world | B — Ryan |
-| 4 | Homophily — spread inside vs across departments | C — Trong |
-| 5 | Model — SIR on a directed email graph | E — Zhihan |
-| 6 | Who spreads it — centrality comparison | D — Sean |
-| 7 | **Results** — targeted vs random immunization | F — Jack |
-| 8 | Limitations and future work | G — Matthew |
+| 1 | Motivation | shared — Zhihan opens |
+| 2 | Problem and dataset | Trung Le |
+| 3 | The network — structure, small-world | Ryan Allen Madayag |
+| 4 | Homophily — inside vs across departments | Trong Le |
+| 5 | Model — SIR on a directed email graph | Zhihan Yao |
+| 6 | Who spreads it — centrality | Sean Roser |
+| 7 | **Results** — targeted vs random | Jack Nguyen |
+| 8 | Limitations | Matthew Saldivar |
 | 9 | Conclusion | shared |
 
 ## Working agreement
 
-- Branch per workstream (`feature/homophily`), pull request into `main`
-- Do not commit raw data — `data/raw/` is gitignored
-- Every figure is produced by a script, never by hand, so it can be regenerated
+- Branch per workstream, pull request into `main`
+- Never commit raw data — `data/raw/` is gitignored
+- Every figure comes from a script so it can be regenerated
 - Log what you did in `CONTRIBUTIONS.md` as you go
-- Blocked for more than a day? Say so in the group chat. Silence is what sinks
-  group projects, not difficulty.
+- **Blocked for more than half a day? Post in the chat.** The whole point of
+  finishing Nov 25 is that a slip has somewhere to go — but only if we know
+  about it.
+
+## One thing to confirm
+
+The Dec 1 deadline is for the submission. The assignment also says the
+presentation happens during the last week of classes, which may be a separate
+date. **Someone should confirm with the professor** whether we present on Dec 1
+or later. We are planning to be fully ready by Nov 25 either way.
