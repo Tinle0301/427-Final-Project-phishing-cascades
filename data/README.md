@@ -24,6 +24,21 @@ All from https://snap.stanford.edu/data/
 python3 src/build_graph.py
 ```
 
+## On Windows
+
+`bash data/download.sh` fails on Windows with errors like
+
+    data/download.sh: line 4: cd: $'data\r': No such file or directory
+
+because Git checks the script out with Windows line endings. Use the Python
+downloader instead, which works everywhere:
+
+    python src\download_data.py
+
+(If you still want the bash route, `git pull` after the .gitattributes fix is
+merged, then `rm data/download.sh && git checkout data/download.sh` to get a
+clean copy.)
+
 Writes `data/email-eu-core.gml` (directed, each node carries a `department`
 attribute) and `data/summary.txt`.
 
