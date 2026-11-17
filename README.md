@@ -13,9 +13,13 @@ training against random training.
 
 ## Dataset
 
-**email-Eu-core** (SNAP) — 1,005 members of a European research institution,
-25,571 directed edges. An edge `u -> v` means u sent v at least one email over
-18 months. A companion file labels every node with one of 42 departments.
+**email-Eu-core** (SNAP) — 1,005 members of a European research institution.
+An edge `u -> v` means u sent v at least one email. A companion file labels every
+node with one of 42 departments.
+
+After removing self-loops the graph we analyse has **1,005 nodes and 24,929
+directed edges**. See `data/README.md` for why SNAP publishes three different
+edge counts and how they reconcile.
 
 - https://snap.stanford.edu/data/email-Eu-core.html
 - Optional, for the time-ordered version: https://snap.stanford.edu/data/email-Eu-core-temporal.html
@@ -30,13 +34,16 @@ state it plainly in the report.
 |---|---|
 | Graph theory and network structure | degree distribution, SCC/WCC, density |
 | Centrality measures | degree vs betweenness vs PageRank as spreader risk |
+| Link analysis (PageRank) | ranking who is reachable from everywhere |
 | Cascades and diffusion | threshold model of who forwards a phishing email |
 | SIR / SIS epidemic models | the core simulation |
 | Small-world phenomenon | path lengths explain how fast it reaches everyone |
-| Homophily | does it spread faster inside a department than across? |
 
-Six of the professor's nine topics, each doing real work rather than being
-name-dropped.
+Six of the nine topics the assignment lists, plus homophily (does a phishing mail
+spread faster inside a department than across?), which the threshold model in
+`2.5` uses: a department dense enough is what stops a cascade.
+
+Each should do real work in the report rather than being name-dropped.
 
 ## Getting set up
 

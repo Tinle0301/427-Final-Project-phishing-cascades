@@ -29,11 +29,25 @@ attribute) and `data/summary.txt`.
 
 ## What to expect
 
-SNAP's page reports 1,005 nodes and 25,571 edges. The page also quotes 25,552
-edges for the largest weakly connected component while the temporal page quotes
-24,929 for what it calls the same thing — **the two pages do not agree**, so we
-take our numbers from `summary.txt`, generated from the actual file, not from
-the website.
+SNAP publishes three different edge counts for this dataset. They all agree —
+they count different things, and self-loops are the difference:
+
+| Published | What it counts | Ours |
+|---|---|---|
+| 25,571 | every unique pair in the file, self-loops included | 25,571 |
+| 25,552 | largest weakly connected component (986 nodes), self-loops included | 25,552 |
+| 24,929 | that same component with self-loops removed | 24,929 |
+
+The file contains 642 self-loops and no duplicate pairs. 623 of them sit inside
+the large component (25,552 - 24,929); the other 19 belong to people whose only
+record in the dataset is an email to themselves. Those 19 are exactly the nodes
+that end up isolated once self-loops are dropped, which is why we keep them as
+nodes: they are members of the organisation, and an attacker could still target
+them.
+
+Our own figures come from `summary.txt`, generated from the files. Our largest
+SCC (803) and WCC (986) match SNAP's published values exactly, which is the check
+that the pipeline reproduces the reference network.
 
 ## Caveats to state in the report
 

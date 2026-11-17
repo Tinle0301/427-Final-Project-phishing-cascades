@@ -12,7 +12,8 @@ after it are buffer in case something slipped.
 email network, and where limited security training does the most good.
 
 **The data:** `email-Eu-core` from SNAP — 1,005 people at a European research
-institution, 25,571 directed emails, each labelled with one of 42 departments.
+institution, 24,929 directed email links after self-loops are removed, each
+person labelled with one of 42 departments.
 The network is real; the outbreak we simulate on top of it is not, and we say so
 in the report.
 
