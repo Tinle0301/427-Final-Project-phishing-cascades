@@ -8,8 +8,9 @@ This file records only who owns which section and when it is due.
 
 ## Hard constraints from the assignment sheet
 
-- **4 pages.** Not negotiable. The word targets below total ~1,950, which is
-  about all that fits once figures and references are in.
+- **4 pages.** Not negotiable. The word targets below total ~1,970, which is
+  already more than fits once three figures and the references take their
+  space; Matthew trims about 20% during assembly.
 - **The five section names are fixed** by the sheet: Abstract, Introduction,
   Notation / Model, Proposed Solution, Conclusion and Future Work. Do not
   rename them or add top-level sections.
@@ -24,17 +25,17 @@ This file records only who owns which section and when it is due.
 
 | Section | Owner | Words | Due |
 |---|---|---|---|
-| Abstract | Matthew Saldivar | ~120 | Wed Nov 25 |
-| 1. Introduction (incl. literature review) | Matthew Saldivar | ~400 | Sat Nov 21 |
-| 2.1 Dataset and notation | Trung Le | ~130 | done |
-| 2.2 Network structure and small-world | Ryan Allen Madayag | ~140 | Sat Nov 21 |
-| 2.3 Homophily and departmental clustering | Trong Le | ~130 | Sat Nov 21 |
-| 2.4 Centrality measures | Sean Roser | ~140 | Sat Nov 21 |
-| 2.5 Diffusion models: epidemic and threshold | Zhihan Yao | ~160 | Sat Nov 21 |
-| 3.1 Targeting training by network position | Sean Roser + Jack Nguyen | ~200 | Sat Nov 21 |
-| 3.2 Results: targeted vs random immunization | Jack Nguyen | ~350 | Wed Nov 25 |
-| 3.3 Feasibility, impact and ethics | Matthew Saldivar | ~170 | Wed Nov 25 |
-| 4. Conclusion and Future Work | Matthew Saldivar | ~300 | Wed Nov 25 |
+| Abstract | Trung Le | ~110 | Wed Nov 25 |
+| 1. Introduction (incl. literature review) | Matthew Saldivar | ~300 | Sat Nov 21 |
+| 2.1 Dataset and notation | Trung Le | ~110 | done |
+| 2.2 Network structure and small-world | Ryan Allen Madayag | ~150 | Sat Nov 21 |
+| 2.3 Homophily and departmental clustering | Trong Le | ~150 | Sat Nov 21 |
+| 2.4 Centrality measures | Sean Roser | ~150 | Sat Nov 21 |
+| 2.5 Diffusion models: epidemic and threshold | Zhihan Yao | ~170 | Sat Nov 21 |
+| 3.1 Targeting training by network position | Sean Roser + Jack Nguyen | ~150 | Sat Nov 21 |
+| 3.2 Results: targeted vs random immunization | Jack Nguyen | ~300 | Wed Nov 25 |
+| 3.3 Feasibility, impact and ethics | Matthew Saldivar | ~150 | Wed Nov 25 |
+| 4. Conclusion and Future Work | Matthew Saldivar | ~230 | Wed Nov 25 |
 | References | everyone adds their own | — | Wed Nov 25 |
 
 There is no separate Related Work section. At four pages the sheet does not ask
