@@ -1,20 +1,3 @@
-"""Turn the raw SNAP files into a GML the rest of the project can load.
-
-    python3 src/build_graph.py
-
-Reads   data/raw/email-Eu-core.txt
-        data/raw/email-Eu-core-department-labels.txt
-Writes  data/email-eu-core.gml      directed, every node carries its department
-        data/summary.txt            the numbers we quote in the report
-
-Run this once. Everyone else starts from the .gml.
-
-The two SNAP pages for this dataset disagree with each other on the edge
-count, so this script reports what is actually in the file: how many lines
-it read, how many of those were duplicate pairs, how many were self-loops,
-and what is left. Those are the numbers that go in the report.
-"""
-
 import os
 import sys
 from collections import Counter
