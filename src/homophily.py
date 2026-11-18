@@ -298,7 +298,7 @@ def main():
             "edges_received_in", "within_share", "within_share_chance", "lift",
             "internal_density", "partner_departments", "share_of_all_cross_edges"]
     with open(TABLE, "w", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=cols)
+        w = csv.DictWriter(f, fieldnames=cols, lineterminator="\n")
         w.writeheader()
         for r in sorted(rows, key=lambda r: -r["size"]):
             w.writerow({c: (round(r[c], 4) if isinstance(r[c], float) else r[c]) for c in cols})
