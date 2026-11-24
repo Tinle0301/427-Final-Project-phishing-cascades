@@ -14,7 +14,10 @@ OUTPUT = ROOT / "analysis" / "figures"
 
 
 # Simulation settings
-BETAS = [0.01, 0.03, 0.05, 0.10, 0.20]
+BETAS = [
+    0.001, 0.002, 0.003, 0.005, 0.007,
+    0.01, 0.015, 0.02, 0.03, 0.05, 0.10, 0.20
+]
 TAU = 5
 STEPS = 40
 RUNS = 100
@@ -41,7 +44,7 @@ def simulate(G, model="SIR", beta=0.1, tau=5,
     if not immune.issubset(nodes):
         raise ValueError("Unknown immune nodes")
 
-    available = list(nodes - immune)
+    available = sorted(nodes - immune, key=str)
 
     if not available:
         raise ValueError("No available nodes")
@@ -169,7 +172,7 @@ def run_experiments(G, model):
         }
 
         print(
-            f"beta={beta:.2f} | "
+            f"beta={beta:.3f} | "
             f"mean reached={results[beta]['mean_size']:.1f} | "
             f"large outbreak probability="
             f"{results[beta]['large_outbreak_probability']:.2f}"
@@ -194,7 +197,7 @@ def plot_curves(results, model):
     plt.xlabel("Time Step")
     plt.ylabel("Average Active Infected Users")
     plt.title(f"{model} Phishing Spread Simulation")
-    plt.legend()
+    plt.legend(ncol=2, fontsize=9)
     plt.grid(alpha=0.3)
     plt.tight_layout()
 
@@ -241,20 +244,139 @@ def plot_comparison(sir_results, sis_results, beta=0.10):
     print("Saved:", OUTPUT / "sir_vs_sis.png")
 
 
+# Compare the average number of users reached
+def plot_mean_reached(sir_results, sis_results):
+
+    betas = list(sir_results.keys())
+
+    sir_means = [
+        sir_results[beta]["mean_size"]
+        for beta in betas
+    ]
+
+    sis_means = [
+        sis_results[beta]["mean_size"]
+        for beta in betas
+    ]
+
+    plt.figure(figsize=(10, 6))
+
+    plt.plot(
+        betas,
+        sir_means,
+        marker="o",
+        label="SIR",
+        linewidth=2
+    )
+
+    plt.plot(
+        betas,
+        sis_means,
+        marker="s",
+        label="SIS",
+        linewidth=2
+    )
+
+    plt.xlabel("Transmission Probability (Beta)")
+    plt.ylabel("Mean Unique Users Reached")
+    plt.title("SIR vs SIS: Mean Users Reached")
+    plt.xscale("log")
+    plt.legend()
+    plt.grid(alpha=0.3)
+    plt.tight_layout()
+
+    plt.savefig(
+        OUTPUT / "mean_reached_comparison.png",
+        dpi=300
+    )
+    plt.close()
+
+    print("Saved:", OUTPUT / "mean_reached_comparison.png")
+
+
+# Plot large outbreak probability for different beta values
+def plot_outbreak_probability(sir_results, sis_results):
+
+    betas = list(sir_results.keys())
+
+    sir_probs = [
+        sir_results[beta]["large_outbreak_probability"]
+        for beta in betas
+    ]
+
+    sis_probs = [
+        sis_results[beta]["large_outbreak_probability"]
+        for beta in betas
+    ]
+
+    plt.figure(figsize=(10, 6))
+
+    plt.plot(
+        betas,
+        sir_probs,
+        marker="o",
+        label="SIR",
+        linewidth=2
+    )
+
+    plt.plot(
+        betas,
+        sis_probs,
+        marker="s",
+        linestyle="--",
+        label="SIS",
+        linewidth=2
+    )
+
+    plt.axhline(
+        y=0.5,
+        color="gray",
+        linestyle=":",
+        label="50% outbreak probability"
+    )
+
+    plt.xlabel("Transmission Probability (Beta)")
+    plt.ylabel("Large Outbreak Probability")
+    plt.title("Large Outbreak Probability vs Beta")
+    plt.xscale("log")
+    plt.ylim(0, 1.05)
+    plt.legend()
+    plt.grid(alpha=0.3)
+    plt.tight_layout()
+
+    plt.savefig(
+        OUTPUT / "outbreak_probability.png",
+        dpi=300
+    )
+    plt.close()
+
+    print("Saved:", OUTPUT / "outbreak_probability.png")
+
 # Find an empirical epidemic threshold
 def find_threshold(results, model):
 
-    # Operational definition:
     # At least 50% of runs reach 10% of network users
+    previous_beta = None
 
     for beta, data in results.items():
 
         if data["large_outbreak_probability"] >= 0.5:
-            print(
-                f"{model} empirical large-outbreak threshold "
-                f"(first tested beta): {beta}"
-            )
+
+            if previous_beta is None:
+                print(
+                    f"{model} threshold is at or below "
+                    f"beta={beta:.3f}"
+                )
+            else:
+                print(
+                    f"{model} threshold is between "
+                    f"beta={previous_beta:.3f} "
+                    f"and beta={beta:.3f}"
+                )
+
             return beta
+
+        previous_beta = beta
 
     print(f"{model}: threshold not found in tested betas")
     return None
@@ -283,7 +405,7 @@ def main():
     sir_results = run_experiments(G, "SIR")
     sis_results = run_experiments(G, "SIS")
 
-    # Generate three figures
+    # Generate figures
     plot_curves(sir_results, "SIR")
     plot_curves(sis_results, "SIS")
 
@@ -292,6 +414,9 @@ def main():
         sis_results,
         beta=0.10
     )
+
+    plot_mean_reached(sir_results, sis_results)
+    plot_outbreak_probability(sir_results, sis_results)
 
     # Estimate thresholds
     find_threshold(sir_results, "SIR")
