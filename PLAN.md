@@ -1,10 +1,11 @@
 # Work Plan
 
-**DUE: Tuesday Dec 1, 2026 at 23:59.**
+**DUE: Monday Dec 7, 2026.** (Moved from Dec 1.)
 
-**All seven workstreams finish Wednesday Nov 25 — the day before Thanksgiving.**
-Everything after that is buffer, polish, and rehearsal. Nobody works over the
-holiday, and if something slips we still have five days to fix it.
+**Code still finishes Wednesday Nov 25 — the day before Thanksgiving.** Four of
+the five analysis workstreams are already done, and letting them drift into the
+holiday would turn finished work back into unfinished work. The extra week goes
+to writing and the deck, which is where we are actually behind.
 
 Seven workstreams of roughly equal size. Everyone owns one, and everyone writes
 the part of the report that comes out of their own work.
@@ -13,27 +14,36 @@ the part of the report that comes out of their own work.
 
 | Dates | What happens |
 |---|---|
-| **Mon Nov 16 – Tue Nov 17** | Setup. Everyone clones, installs, builds the graph. |
-| **Wed Nov 18 – Sat Nov 21** | Analyses B, C, D, E. Four days, all in parallel. |
-| **Sun Nov 22 – Wed Nov 25** | F (immunization). G assembles the report and slides. |
-| **Wed Nov 25, 23:59** | **EVERYTHING DONE.** All figures, all report text, all slides. |
+| **done** | A, B, C, D, E — code, figures and data all in the repo. |
+| **Wed Nov 25** | **All code done, all PRs merged.** This is F (immunization). |
 | **Thu Nov 26 – Fri Nov 27** | Thanksgiving. Nothing scheduled. |
-| **Sat Nov 28 – Sun Nov 29** | Buffer. Only used if something slipped. |
-| **Mon Nov 30** | Rehearse. Final read-through. |
-| **Tue Dec 1** | Final check. **Submit before 23:59.** |
+| **Sun Nov 29** | Every report subsection written in the Doc. F if it slipped. |
+| **Tue Dec 1** | G has the full 4-page draft assembled. |
+| **Thu Dec 3** | All 9 slides built. |
+| **Fri Dec 4** | Everyone reads the whole report. Timed rehearsal. |
+| **Sat Dec 5 – Sun Dec 6** | Buffer and polish. |
+| **Mon Dec 7** | **Submit.** |
 
 ### Hard checkpoints
 
 | When | What must be true | Who is blocked if it slips |
 |---|---|---|
-| **Tue Nov 17, EOD** | Repo runs for all seven of us | everyone |
-| **Sat Nov 21, EOD** | B, C, D, E figures done and pushed | **Jack cannot start** without D and E |
-| **Wed Nov 25, 23:59** | All six figures + all report subsections + 9 slides | — |
-| **Mon Nov 30** | Rehearsal done | — |
-| **Tue Dec 1, 23:59** | Report + slides + contribution doc submitted | — |
+| **Wed Nov 25** | F done; every branch merged into `main` | G cannot assemble |
+| **Sun Nov 29** | All 11 report subsections written | G cannot assemble |
+| **Tue Dec 1** | 4-page draft exists | everyone — no draft, nothing to rehearse |
+| **Thu Dec 3** | 9 slides built | — |
+| **Fri Dec 4** | Rehearsal done, timed | — |
+| **Mon Dec 7** | Report + slides + contribution doc submitted | — |
 
-**Sat Nov 21 is the one date that matters.** Jack has four days after it, and
-nothing after Nov 25 depends on anyone but the group as a whole.
+**The date that matters now is Sun Nov 29.** The analysis is nearly finished;
+the writing has barely started. Two of eleven report subsections exist. If the
+29th slips, every date after it slips with it, because assembly cannot begin
+until the sections are written.
+
+**Still to confirm with the professor:** whether the *presentation* moved with
+the submission, or whether we still present during the last week of classes. If
+the presentation stays put, the deck is due before the report and this schedule
+is the wrong way round.
 
 ## Workstreams
 
@@ -46,7 +56,7 @@ pages disagree, so our numbers come from the file). Produce the counts table for
 the Notation section.
 **Deliver:** `data/summary.txt` + the dataset paragraph.
 
-### B — Network structure · *Ryan Allen Madayag* · due Sat Nov 21
+### B — Network structure · *Ryan Allen Madayag* · DONE
 In/out-degree distributions log-log. SCC and WCC counts and largest. Average
 shortest path length on the largest SCC, average clustering. Compare both
 against `nx.gnm_random_graph` of the same size — that comparison is what
@@ -54,21 +64,21 @@ justifies the small-world claim.
 **Deliver:** `analysis/figures/degree_distribution.png` + one sentence with the
 numbers.
 
-### C — Homophily and departments · *Trong Le* · due Sat Nov 21
+### C — Homophily and departments · *Trong Le* · DONE
 What fraction of edges stay inside a department? What would chance predict —
 computed analytically and by shuffling labels 1,000 times? Which departments are
 insular, which bridge? Report
 `nx.attribute_assortativity_coefficient(G, "department")`.
 **Deliver:** `analysis/figures/homophily.png` + a short table.
 
-### D — Centrality and super-spreaders · *Sean Roser* · due Sat Nov 21
+### D — Centrality and super-spreaders · *Sean Roser* · DONE, merged
 In-degree, out-degree, betweenness, PageRank for all 1,005 nodes. Top 20 by
 each. Spearman correlation between the measures. Exact betweenness runs in
 seconds at this size.
 **Deliver:** `analysis/top_spreaders.csv` + `figures/centrality_overlap.png`.
 **Jack is blocked until you push.**
 
-### E — SIR / SIS simulation · *Zhihan Yao* · due Sat Nov 21
+### E — SIR / SIS simulation · *Zhihan Yao* · DONE
 Discrete-time SIR on the directed graph. One seed, infection probability beta
 per contact, recovery after tau steps. Sweep beta ~0.01 to 0.2, average 100+
 runs. Find the epidemic threshold.
@@ -80,7 +90,7 @@ Immunise k users before the outbreak — by degree, betweenness, PageRank, and a
 random. Sweep k from 0 to ~100, measure final outbreak size, average over runs.
 **Deliver:** `analysis/figures/immunization.png` — our headline figure — plus
 the number: "targeting k users by X cuts the outbreak Y% versus random."
-**You start Sun Nov 22.** Before then, help test D and E so they land on time.
+**Sean's rankings and Zhihan's `simulate()` are both ready.** Before writing the sweep, note that outbreak sizes are bimodal: at beta=0.05 roughly 30% of runs fizzle at ~1 person and 70% reach ~800, with nothing in between, because 181 of 1,005 people have out-degree 0. Seed only from nodes with out-degree > 0, or report the mean given the outbreak took off — and say which in 3.2.
 
 ### G — Literature and report assembly · *Matthew Saldivar* · due Wed Nov 25
 At least 8 papers with one-line takeaways. Write Abstract, Introduction,
@@ -94,9 +104,10 @@ assembling.
 ## Who is waiting on whom
 
 ```
-A (Nov 17)  ──►  B, C, D, E (Nov 21)
+A, B, C, D, E   done
 D + E       ──►  F (Nov 25)
-everyone    ──►  G (Nov 25)
+everyone    ──►  report sections (Nov 29)
+sections    ──►  G assembles draft (Dec 1), slides (Dec 3)
 ```
 
 ## Report sections

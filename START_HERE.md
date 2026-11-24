@@ -2,11 +2,12 @@
 
 Read this once, find your name, do your part.
 
-## ⏰ DUE TUESDAY DEC 1, 2026 AT 23:59
+## ⏰ DUE MONDAY DEC 7, 2026
 
-**But our internal deadline is Wednesday Nov 25 — the day before Thanksgiving.**
-All seven parts are done by then. Nobody works over the holiday, and the days
-after it are buffer in case something slipped.
+**Code still finishes Wednesday Nov 25 — the day before Thanksgiving.** The
+deadline moved from Dec 1, but do not let everything slide with it: four of the
+five analysis workstreams are already done. The extra week goes to writing and
+the deck, which is where we are behind.
 
 **The project:** how a phishing email spreads through a real organisation's
 email network, and where limited security training does the most good.
@@ -45,16 +46,20 @@ Then add your GitHub username to your row in `TEAM.md`.
 
 | Date | What must be true |
 |---|---|
-| **Tue Nov 17** | Everyone has the repo running |
-| **Sat Nov 21** | B, C, D, E figures done and pushed |
-| **Wed Nov 25, 23:59** | **EVERYTHING DONE** — all figures, all report text, all 9 slides |
+| ~~Sat Nov 21~~ | B, C, D, E — **done**, code is in the repo |
+| **Wed Nov 25** | All code done, every branch merged into `main` |
 | **Thu Nov 26 – Fri Nov 27** | Thanksgiving — nothing scheduled |
-| **Sat Nov 28 – Sun Nov 29** | Buffer only |
-| **Mon Nov 30** | Rehearsal |
-| **Tue Dec 1, 23:59** | **SUBMIT** |
+| **Sun Nov 29** | Every report subsection written in the Doc |
+| **Tue Dec 1** | Full 4-page draft assembled |
+| **Thu Dec 3** | All 9 slides built |
+| **Fri Dec 4** | Everyone reads the whole report; timed rehearsal |
+| **Sat Dec 5 – Sun Dec 6** | Buffer and polish |
+| **Mon Dec 7** | **SUBMIT** |
 
-**Sat Nov 21 is the date that matters** — Jack cannot start the headline result
-until Sean and Zhihan have pushed, and he needs those four days.
+**Sun Nov 29 is the date that matters now.** The analysis is nearly finished and
+the writing has barely started — 2 of 11 report subsections exist. Assembly
+cannot begin until the sections are written, so if the 29th slips, every date
+after it slips too.
 
 ---
 
@@ -90,7 +95,7 @@ SNAP (its pages contradict each other, so we trust the file). Produce the counts
 table for the Notation section.
 **Deliver:** `data/summary.txt` + the dataset paragraph.
 
-### B — Network structure · Ryan Allen Madayag · **due Sat Nov 21** · slide 3
+### B — Network structure · Ryan Allen Madayag · **done** · slide 3
 `src/structure.py`
 - In- and out-degree distributions, log-log
 - SCC and WCC: how many, how big is the largest
@@ -104,7 +109,7 @@ Useful: `G.in_degree()`, `nx.strongly_connected_components`,
 **Deliver:** `figures/degree_distribution.png` + "path length is X vs Y random,
 clustering is Z vs W."
 
-### C — Homophily and departments · Trong Le · **due Sat Nov 21** · slide 4
+### C — Homophily and departments · Trong Le · **done** · slide 4
 `src/homophily.py`
 - What fraction of edges connect two people in the same department?
 - What would chance predict? Two ways: analytically from department sizes, and
@@ -114,7 +119,7 @@ clustering is Z vs W."
 
 **Deliver:** `figures/homophily.png` (observed vs expected) + a short table.
 
-### D — Centrality and super-spreaders · Sean Roser · **due Sat Nov 21** · slide 6
+### D — Centrality and super-spreaders · Sean Roser · **done** · slide 6
 `src/centrality.py`
 - In-degree, out-degree, betweenness, PageRank for all 1,005 nodes
 - Top 20 by each → `analysis/top_spreaders.csv`
@@ -126,7 +131,7 @@ Exact betweenness runs in seconds at 1,005 nodes — no sampling needed.
 **Deliver:** the CSV + `figures/centrality_overlap.png`.
 **Push as soon as the rankings work — Jack is blocked on you.**
 
-### E — SIR / SIS simulation · Zhihan Yao · **due Sat Nov 21** · slide 5
+### E — SIR / SIS simulation · Zhihan Yao · **done** · slide 5
 `src/simulate_sir.py`
 - Discrete-time SIR, directed. One infected seed. Each step an infected node
   infects each out-neighbour with probability `beta`; after `tau` steps it
@@ -146,9 +151,10 @@ Exact betweenness runs in seconds at 1,005 nodes — no sampling needed.
 
 **Deliver:** `figures/immunization.png` — outbreak size vs k, four curves — plus
 the headline number.
-**You start Sun Nov 22.** Until then, help test D and E so they land on the 21st.
+**Sean's rankings and Zhihan's simulate() are ready.** Read the note in the
+chat about outbreak sizes being bimodal before you write the sweep.
 
-### G — Literature and report assembly · Matthew Saldivar · **due Wed Nov 25** · slide 8
+### G — Literature and report assembly · Matthew Saldivar · **draft Tue Dec 1 · slides Thu Dec 3** · slide 8
 `literature/notes.md` and `report/`
 - 8+ papers, one-line takeaway each: network epidemiology (Pastor-Satorras &
   Vespignani), targeted immunization, influence maximization (Kempe, Kleinberg
@@ -167,9 +173,10 @@ finish it early and spend the rest of your time assembling.
 ## 5. Who is waiting on whom
 
 ```
-A (Nov 17)  ──►  B, C, D, E (Nov 21)
+A, B, C, D, E   done
 D + E       ──►  F (Nov 25)
-everyone    ──►  G (Nov 25)
+everyone    ──►  report sections (Nov 29)
+sections    ──►  G assembles draft (Dec 1), slides (Dec 3)
 ```
 
 ---
