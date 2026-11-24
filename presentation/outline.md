@@ -1,5 +1,12 @@
 # Presentation — 9 slides maximum
 
+**The deck lives in Google Slides, not in this folder.**
+
+https://docs.google.com/presentation/d/1dvFYeJrRwvTeUNq_w4yN8vO72Xe4-S_oEgdJQS-3kYg/edit?usp=sharing
+
+Build your slide there. This file only records who owns which slide and what it
+has to carry.
+
 Target 10–12 minutes. One idea per slide, figures over text.
 
 | # | Slide | Carries | Owner |
@@ -14,8 +21,25 @@ Target 10–12 minutes. One idea per slide, figures over text.
 | 8 | Limitations | Honest about what we simulated | Matthew Saldivar |
 | 9 | Conclusion | One sentence anyone can repeat | shared |
 
+Every slide in the deck already carries the owner's name, the due date, and
+speaker notes saying what to actually say. Delete the owner chips and the yellow
+boxes before we present — they are scaffolding.
+
+## Figures
+
+Each slide has a dashed box naming the figure it needs. Drag the PNG in from
+`analysis/figures/` and delete the box. Available now:
+
+| Slide | Figure |
+|---|---|
+| 3 | `degree_distribution.png` |
+| 4 | `homophily.png` |
+| 5 | `sir_curves.png`, `sir_vs_sis.png` |
+| 6 | `centrality_overlap.png` |
+| 7 | `immunization.png` — not built yet |
+
 ## Rules
 
 - No slide is a wall of text; if it needs a paragraph, it goes in the report
 - Every figure has readable axis labels at the back of the room
-- Rehearse once together before the day, timed
+- Slides are due **Thu Dec 3**; rehearsal is **Fri Dec 4**, timed
