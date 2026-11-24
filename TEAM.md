@@ -29,7 +29,8 @@ GitHub notifications or your email — you cannot push until you do.
 | The report text | the [shared Google Doc](https://docs.google.com/document/d/15RZsyliuhNZb4LzXrcKMs8_qQ0cAWoex/edit?usp=sharing) |
 | The contribution table | the same Doc, at the end |
 | Who writes what, and when | `report/outline.md` |
-| Slides | `presentation/outline.md` |
+| Slides | the [shared Google Slides deck](https://docs.google.com/presentation/d/1dvFYeJrRwvTeUNq_w4yN8vO72Xe4-S_oEgdJQS-3kYg/edit?usp=sharing) |
+| Who owns which slide | `presentation/outline.md` |
 | Schedule and deadlines | `PLAN.md` |
 | Setup and your task | `START_HERE.md` |
 
