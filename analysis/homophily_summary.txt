@@ -1,0 +1,44 @@
+Homophily by department - src/homophily.py (seed 427, 1000 shuffles)
+
+nodes 1005, directed edges 24929, departments 42
+
+-- same-department edges --
+observed                        0.3468  (8645 of 24929 edges)
+chance, analytic (sizes only)   0.0467
+chance, 1,000-shuffle mean      0.0466  (sd 0.0029, 99% range 0.0403-0.0537)
+chance, sizes + email volume    0.0477
+observed / chance               7.4x
+z-score vs shuffles             105
+empirical p                     < 0.0010  (no shuffle reached the observed value)
+reciprocated pairs only         0.3668  (8865 mutual pairs)
+
+-- assortativity --
+attribute_assortativity(dept)   0.3141
+shuffled labels, mean (sd)      -0.0024 (0.0016)
+
+-- density --
+whole graph                     0.0247
+inside departments (pooled)     0.1836  (7.4x the whole graph)
+
+departments with 10+ people      28; above chance: 28
+
+-- most insular (top quartile of within-share, 10+ people) --
+  dept 14   92 people  within  70.7% (chance  9.1%,  7.8x)  38 partner depts
+  dept 17   35 people  within  62.9% (chance  3.4%, 18.6x)  33 partner depts
+  dept  7   51 people  within  56.7% (chance  5.0%, 11.4x)  36 partner depts
+  dept 16   25 people  within  50.3% (chance  2.4%, 21.1x)  32 partner depts
+  dept  0   49 people  within  46.4% (chance  4.8%,  9.7x)  33 partner depts
+  dept 19   29 people  within  46.0% (chance  2.8%, 16.5x)  34 partner depts
+  dept 21   61 people  within  45.0% (chance  6.0%,  7.5x)  34 partner depts
+
+-- bridges (bottom quartile of within-share: most of their mail crosses) --
+  dept 27   10 people  within   1.7% (chance  0.9%,  1.9x)  28 partner depts
+  dept 34   13 people  within   5.6% (chance  1.2%,  4.7x)  39 partner depts
+  dept 23   27 people  within   6.5% (chance  2.6%,  2.5x)  31 partner depts
+  dept  6   28 people  within   7.6% (chance  2.7%,  2.8x)  35 partner depts
+  dept 36   22 people  within   9.9% (chance  2.1%,  4.7x)  40 partner depts
+  dept 35   13 people  within  11.1% (chance  1.2%,  9.3x)  38 partner depts
+  dept 38   13 people  within  11.7% (chance  1.2%,  9.8x)  38 partner depts
+
+-- the hub: largest share of all cross-department links --
+  dept 36  22 people  touches 11.6% of cross-dept links, 76 in-links per person from other depts (median dept 14)
