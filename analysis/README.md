@@ -9,6 +9,9 @@ and re-run it, so the report and the code can never disagree.
 |---|---|---|
 | `figures/degree_distribution.png` | `structure.py` | report + slide 3 |
 | `figures/homophily.png` | `homophily.py` | report + slide 4 |
+| `figures/homophily_mixing.png` | `homophily.py` | slide 4 (backup) |
+| `homophily_departments.csv` | `homophily.py` | report table (2.3) |
+| `homophily_summary.txt` | `homophily.py` | numbers quoted in 2.3 |
 | `figures/centrality_overlap.png` | `centrality.py` | report + slide 6 |
 | `figures/sir_curves.png` | `simulate_sir.py` | report + slide 5 |
 | `figures/immunization.png` | `immunize.py` | report + slide 7 (headline) |
