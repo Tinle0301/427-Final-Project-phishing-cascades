@@ -40,7 +40,7 @@ Where we use it: Introduction (training is costly and uneven); 3.3 (what "immuni
 **Pastor-Satorras, R., Vespignani, A. (2001).** Epidemic Spreading in Scale-Free Networks. *Physical Review Letters* 86(14), 3200–3203.
 Link: https://doi.org/10.1103/PhysRevLett.86.3200
 Takeaway: In networks with a heavy-tailed degree distribution the epidemic threshold can vanish, so even a weak contagion can spread widely.
-Where we use it: Introduction; links to Ryan's degree distribution (2.2) and Zhihan's threshold (2.5).
+Where we use it: Introduction (why spread is fast on heavy-tailed networks).
 
 ---
 
@@ -56,7 +56,7 @@ Where we use it: Introduction; the closest prior work to ours.
 **Pastor-Satorras, R., Vespignani, A. (2002).** Immunization of Complex Networks. *Physical Review E* 65, 036104.
 Link: https://doi.org/10.1103/PhysRevE.65.036104
 Takeaway: Random immunization barely helps on heavy-tailed networks, while immunizing the highest-degree nodes restores an epidemic threshold.
-Where we use it: Introduction; the theory behind Jack's degree-vs-random comparison (3.2).
+Where we use it: Introduction (theory behind targeted vs. random training).
 
 ---
 
@@ -70,7 +70,7 @@ Where we use it: Introduction; future work (a strategy needing less network know
 **Holme, P., Kim, B.J., Yoon, C.N., Han, S.K. (2002).** Attack Vulnerability of Complex Networks. *Physical Review E* 65, 056109.
 Link: https://doi.org/10.1103/PhysRevE.65.056109
 Takeaway: Removing nodes by betweenness can fragment a network faster than removing them by degree, because bridges hold separate groups together.
-Where we use it: Introduction; supports Sean's betweenness ranking (2.4) and the department-bridge idea (2.3).
+Where we use it: Introduction (betweenness-based targeting).
 
 ---
 
@@ -86,30 +86,7 @@ Where we use it: Introduction; the "inverse" of our question (we pick k nodes to
 **Kitsak, M., Gallos, L.K., Havlin, S., Liljeros, F., Muchnik, L., Stanley, H.E., Makse, H.A. (2010).** Identification of Influential Spreaders in Complex Networks. *Nature Physics* 6, 888–893.
 Link: https://doi.org/10.1038/nphys1746
 Takeaway: A node's position in the network core (k-shell) predicts its spreading power better than its raw degree or betweenness.
-Where we use it: Introduction; motivates comparing several centrality measures rather than trusting degree alone (2.4).
-
----
-
-**Granovetter, M. (1978).** Threshold Models of Collective Behavior. *American Journal of Sociology* 83(6), 1420–1443.
-Link: https://doi.org/10.1086/226707
-Takeaway: People adopt a behavior once enough of their contacts have, so small changes in thresholds can decide whether a cascade takes off.
-Where we use it: 2.5 threshold cascade (Zhihan); Introduction if space allows.
-
----
-
-## Network structure and homophily
-
-**Watts, D.J., Strogatz, S.H. (1998).** Collective Dynamics of "Small-World" Networks. *Nature* 393, 440–442.
-Link: https://doi.org/10.1038/30918
-Takeaway: Networks with high clustering but short path lengths ("small worlds") let contagions spread much faster than regular lattices.
-Where we use it: 2.2 small-world comparison (Ryan).
-
----
-
-**McPherson, M., Smith-Lovin, L., Cook, J.M. (2001).** Birds of a Feather: Homophily in Social Networks. *Annual Review of Sociology* 27, 415–444.
-Link: https://doi.org/10.1146/annurev.soc.27.1.415
-Takeaway: Ties form disproportionately between similar people, including those who share an organizational position, so networks split into tightly knit groups.
-Where we use it: 2.3 homophily by department (Trong).
+Where we use it: Introduction (why we compare several centrality measures).
 
 ---
 
@@ -118,14 +95,14 @@ Where we use it: 2.3 homophily by department (Trong).
 **Leskovec, J., Kleinberg, J., Faloutsos, C. (2007).** Graph Evolution: Densification and Shrinking Diameters. *ACM Transactions on Knowledge Discovery from Data* 1(1).
 Link: https://doi.org/10.1145/1217299.1217301
 Takeaway: The source paper for the European research institution email data that email-Eu-core is built from.
-Where we use it: 2.1 dataset (Trung).
+Where we use it: Introduction (dataset citation).
 
 ---
 
 **Yin, H., Benson, A.R., Leskovec, J., Gleich, D.F. (2017).** Local Higher-Order Graph Clustering. *Proceedings of the 23rd ACM SIGKDD Conference*, 555–564.
 Link: https://doi.org/10.1145/3097983.3098069
 Takeaway: Introduced the email-Eu-core network with its 42 department labels as ground-truth communities.
-Where we use it: 2.1 dataset (Trung); 2.3 department labels (Trong).
+Where we use it: Introduction (dataset and department labels).
 
 ---
 
