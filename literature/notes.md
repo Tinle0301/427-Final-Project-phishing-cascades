@@ -22,7 +22,7 @@ Where we use it: Introduction (justifies modelling spread inside the email graph
 ---
 
 **Jagatic, T.N., Johnson, N.A., Jakobsson, M., Menczer, F. (2007).** Social Phishing. *Communications of the ACM* 50(10), 94–100.
-Link: https://cacm.acm.org/magazines/2007/10/5556-social-phishing
+Link: https://doi.org/10.1145/1290958.1290968
 Takeaway: A phishing email that appeared to come from a friend fooled 72% of targets versus 16% from a stranger, so who sends the email matters as much as what it says.
 Where we use it: Introduction; justifies treating email links as trust channels; future work on weighted edges.
 
