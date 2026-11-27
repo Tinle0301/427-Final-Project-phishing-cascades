@@ -103,10 +103,3 @@ Where we use it: Introduction (dataset citation).
 Link: https://doi.org/10.1145/3097983.3098069
 Takeaway: Introduced the email-Eu-core network with its 42 department labels as ground-truth communities.
 Where we use it: Introduction (dataset and department labels).
-
----
-
-**Easley, D., Kleinberg, J. (2010).** Networks, Crowds, and Markets: Reasoning About a Highly Connected World. *Cambridge University Press.*
-Link: https://www.cs.cornell.edu/home/kleinber/networks-book/
-Takeaway: Course textbook; standard definitions of centrality, PageRank, cascades and epidemic models.
-Where we use it: Anywhere a definition needs a citation.
